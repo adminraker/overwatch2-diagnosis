@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OW2適正診断</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>OW2適正診断</h1>
+    <form method="post">
+        <label>どのロールをプレイしたいですか？</label><br>
+        <input type="radio" name="role" value="tank" required> タンク<br>
+        <input type="radio" name="role" value="damage"> ダメージ<br>
+        <input type="radio" name="role" value="support"> サポート<br>
+
+        <br>
+        <label>戦闘距離は？</label><br>
+        <input type="radio" name="range_type" value="近距離" required> 近距離<br>
+        <input type="radio" name="range_type" value="中距離"> 中距離<br>
+        <input type="radio" name="range_type" value="遠距離"> 遠距離<br>
+
+        <br>
+        <label>機動力は？</label><br>
+        <input type="radio" name="mobility" value="高い" required> 高い<br>
+        <input type="radio" name="mobility" value="普通"> 普通<br>
+        <input type="radio" name="mobility" value="低い"> 低い<br>
+
+        <br>
+        <label>難易度は？</label><br>
+        <input type="radio" name="difficulty" value="簡単" required> 簡単<br>
+        <input type="radio" name="difficulty" value="普通"> 普通<br>
+        <input type="radio" name="difficulty" value="難しい"> 難しい<br>
+
+        <br>
+        <!-- 🔽 ボタンを中央に配置 -->
+        <div class="button-container">
+            <button type="submit">診断する</button>
+        </div>
+    </form>
+
+    {% if result %}
+        <h2>おすすめのキャラクター: {{ result | join(', ') }}</h2>
+    {% endif %}
+</body>
+</html>
+
