@@ -1,0 +1,103 @@
+/* 🔹 背景画像の設定 */
+body {
+  font-family: Arial, sans-serif;
+  background: url('../static/overwatch-2-game-heroes-4k-ee.jpg') no-repeat center center fixed;
+  background-size: cover; /* 画面全体にフィット */
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+/* 🔹 背景にオーバーレイ（暗めフィルター）を適用 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 黒の透明フィルターで文字を見やすく */
+  z-index: -1;
+}
+
+/* 🔹 タイトルデザイン */
+h1 {
+  color: #00ffcc; /* ネオンブルー */
+  text-shadow: 0px 0px 10px #00ffcc;
+}
+
+/* 🔹 フォームのデザイン（半透明の背景） */
+form {
+  background: rgba(34, 34, 34, 0.8); /* 半透明の黒 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.3);
+  display: inline-block;
+  text-align: left;
+  width: 300px;
+  margin-top: 20px;
+}
+
+/* 🔹 ラベルデザイン */
+label {
+  font-weight: bold;
+  color: white;
+}
+
+/* 🔹 ラジオボタンの設定 */
+input[type="radio"] {
+  margin: 10px;
+}
+
+/* 🔹 ボタンを中央に配置 */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 🔥 ネオンボタン（ゲーミング風） */
+button {
+  background-color: transparent;
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔹 ホバー時に光るエフェクト */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 204, 0.2);
+  transition: left 0.3s ease;
+}
+
+button:hover::before {
+  left: 0;
+}
+
+/* 🔹 ホバー時にネオン風に光る */
+button:hover {
+  color: black;
+  background: #00ffcc;
+  box-shadow: 0px 0px 15px #00ffcc;
+}
+
+/* 🔹 診断結果の表示デザイン */
+h2 {
+  color: #00ffcc;
+  text-shadow: 0px 0px 10px #00ffcc;
+  margin-top: 20px;
+}
